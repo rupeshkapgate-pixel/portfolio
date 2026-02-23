@@ -23,7 +23,13 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+               "src/assets",
+               {
+                       "glob": "**/*",
+                       "input": "src/assets",
+                       "output": "/assets/"
+                     }
             ],
             "styles": [
               "src/styles.css"
@@ -60,6 +66,11 @@
         },
         "serve": {
           "builder": "@angular/build:dev-server",
+          "options": {
+            "hmr": false,
+            "liveReload": false,
+            "poll": 2000
+          },
           "configurations": {
             "production": {
               "buildTarget": "portfolio:build:production"
